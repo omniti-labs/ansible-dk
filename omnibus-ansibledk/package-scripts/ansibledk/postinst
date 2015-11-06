@@ -4,14 +4,42 @@
 # after package is installed.
 #
 
-PROGNAME=$(basename $0)
+PROGNAME=`basename $0`
+INSTALLER_DIR=/opt/ansibledk
+USAGE="usage: $0"
 
-function error_exit
+error_exit()
 {
   echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
   exit 1
 }
 
-echo "Thank you for installing ansibledk!"
+is_mac_os()
+{
+  uname -v | grep "^Darwin" 2>&1 >/dev/null
+}
+
+is_omnios()
+{
+  uname -v | grep "^omnios" 2>&1 >/dev/null
+}
+
+if is_omnios; then
+    PREFIX="/opt/omni"
+elif is_mac_os; then
+    PREFIX="/usr/local"
+    mkdir -p "$PREFIX/bin"
+else
+    PREFIX="/usr"
+fi
+
+binaries="ansible-dk"
+
+for binary in $binaries; do
+  ln -sf $INSTALLER_DIR/bin/$binary $PREFIX/bin || error_exit "Cannot link $binary to $PREFIX/bin"
+done
+
+echo "Thank you for installing Ansible-DK!  Go make trouble!"
 
 exit 0
+

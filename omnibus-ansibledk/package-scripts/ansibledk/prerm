@@ -6,10 +6,37 @@
 
 PROGNAME=$(basename $0)
 
-function error_exit
+INSTALLER_DIR=/opt/ansibledk
+USAGE="usage: $0"
+
+error_exit()
 {
   echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
   exit 1
 }
+
+is_mac_os()
+{
+  uname -v | grep "^Darwin" 2>&1 >/dev/null
+}
+
+is_omnios()
+{
+  uname -v | grep "^omnios" 2>&1 >/dev/null
+}
+
+if is_omnios; then
+    PREFIX="/opt/omni"
+elif is_mac_os; then
+    PREFIX="/usr/local"
+else
+    PREFIX="/usr"
+fi
+
+binaries="ansible-dk"
+
+for binary in $binaries; do
+  rm -f $INSTALLER_DIR/bin/$binary
+done
 
 exit 0
