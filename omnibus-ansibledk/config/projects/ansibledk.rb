@@ -22,3 +22,5 @@ dependency "version-manifest"
 
 exclude "**/.git"
 exclude "**/bundler/git"
+
+compress :dmg
