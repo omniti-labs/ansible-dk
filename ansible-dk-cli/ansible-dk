@@ -35,4 +35,5 @@ echo export GEM_ROOT=\"/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
 echo export GEM_HOME=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI\"
 echo export GEM_PATH=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI:/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
 echo export PYTHONUSERBASE=\"$HOME/.ansibledk/python\"
+echo export PIP_INSTALL_OPTION=\"--user\"
 # echo export PYTHONPATH=

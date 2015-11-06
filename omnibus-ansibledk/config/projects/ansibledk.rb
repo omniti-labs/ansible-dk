@@ -14,6 +14,7 @@ dependency "preparation"
 
 # ansibledk dependencies/components
 dependency "python"
+dependency "pip"
 dependency "ruby"
 dependency "ansible-dk"
 
