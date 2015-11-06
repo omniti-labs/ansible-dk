@@ -14,6 +14,7 @@ dependency "preparation"
 
 # ansibledk dependencies/components
 dependency "python"
+dependency "ruby"
 
 # Version manifest file
 dependency "version-manifest"
