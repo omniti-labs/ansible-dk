@@ -161,6 +161,3 @@ DEPENDENCIES
   omnibus (~> 4.1)
   omnibus-software!
   test-kitchen (~> 1.4)
-
-BUNDLED WITH
-   1.10.6

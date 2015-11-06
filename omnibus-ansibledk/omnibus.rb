@@ -13,7 +13,7 @@
 #
 # Uncomment this line to change the default base directory to "local"
 # -------------------------------------------------------------------
-# base_dir './local'
+base_dir './local'
 #
 # Alternatively you can tune the individual values
 # ------------------------------------------------
@@ -44,7 +44,7 @@
 
 # Load additional software
 # ------------------------------
-# software_gems ['omnibus-software', 'my-company-software']
+software_gems ['omnibus-software' ]
 # local_software_dirs ['/path/to/local/software']
 
 # Windows architecture defaults
