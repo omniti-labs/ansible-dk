@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ansible-dk tool.
+# The plan is for one day this to become a generic tool
+# with many subcommands, likely implemented in Ruby or Python.
+# The immediate need, though, is for a script that will provide
+# the shell env vars.
+
+# Usage:
+# eval "$(ansible-dk shell-init bash)"
+
+# Check CLI args.  Not uh, very flexible at the moment.
+if [[ "z$1" != "zshell-init" ]]; then
+    echo "Usage: ansible-dk shell-init bash" 1>&2
+    exit 1
+fi
+
+if [[ "z$2" != "zbash" ]]; then
+    echo "Usage: ansible-dk shell-init bash" 1>&2
+    exit 2   
+fi
+
+RUBY_ABI=2.1.0
+PYTHON_ABI=2.7
+
+# Ensure the user has a .ansibledk directory for
+# private user gems
+mkdir -p $HOME/.ansibledk
+mkdir -p $HOME/.ansibledk/gem
+mkdir -p $HOME/.ansibledk/python
+
+# TODO: python paths
+echo export PATH=\"/opt/ansibledk/bin:$HOME/.ansibledk/gem/ruby/$RUBY_ABI/bin:/opt/ansibledk/embedded/bin:$PATH\"
+echo export GEM_ROOT=\"/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
+echo export GEM_HOME=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI\"
+echo export GEM_PATH=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI:/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
+echo export PYTHONUSERBASE=\"$HOME/.ansibledk/python\"
+# echo export PYTHONPATH=

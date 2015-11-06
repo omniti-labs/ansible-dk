@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# Perform necessary ansibledk removal steps
-# after package is uninstalled.
-#
-
-echo "ansibledk has been uninstalled!"
-
-exit 0
