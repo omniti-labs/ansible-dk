@@ -2,7 +2,7 @@
 
 An omnibus-based toolkit for working on Ansible-based infrastructure code.
 
-That means, this project is a set of scripts to build OS packages the bundle together a bunch of tools to make developing with Ansible more reliable.  Unless you are contributing to this project, you almost certainly don't need this source code; you're instead looking for the binary OS packages.
+That means, this project is a set of scripts to build OS packages that bundle together a bunch of tools to make developing with Ansible more robust, reliable, fast, and fun - in other words, a SLDC for ansible.  Unless you are contributing to this project, you almost certainly don't need this source code; you're instead looking for the binary OS packages.
 
 ## Using the Binaries
 
@@ -18,7 +18,7 @@ Once you have your package installed, to use the tools, run this magic command i
 
     eval "$(ansible-dk shell-init bash)"
 
-This will alter various environment variables so that the Ansible DK's 
+This will alter various environment variables so that the Ansible DK's tools appear first in your path, along with all the Python and Ruby libraries they need.
 
 (Currently only bash is supported; patches welcome.)
 
@@ -89,31 +89,29 @@ If you have some experience doing Omnibus packaging, which is perhaps not for th
 
 This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI COmputer Consulting (www.omniti.com).  Community contributors are welcome, and maintainers may join after a vetting period.
 
-#### Clinton Wolfe, DevOps Practice Lead at OmniTI
-
-#### Rick Pufky, DevOps Generalist at OmniTI
-
-#### Your Name Could Be Here
+ * Clinton Wolfe, DevOps Practice Lead at OmniTI
+ * Rick Pufky, DevOps Generalist at OmniTI
+ * Your Name Could Be Here
 
 ### Special Thanks
 
-#### Robert Treat, CEO of OmnITI
-
+ * Robert Treat, CEO of OmnITI
+ 
 He said, "You should totally do that."  So, we did.
 
-#### devops-toolchain Google Group
+ * devops-toolchain Google Group
 
 For the enthusiastic response
 
-#### Bill Nottingham  of Ansible / RedHat
+ * Bill Nottingham  of Ansible / RedHat
 
 For basically saying, sure, why not
 
-#### Joseph Holsten of DataDog
+ * Joseph Holsten of DataDog
 
-For giving us something resembling a clue for how to build and package python modules under omnibus
+For giving us a clue for how to build and package python modules under omnibus
 
-#### Chef, Inc.
+ * Chef, Inc.
 
 For Omnibus, and the many build definitions we are using.
 
