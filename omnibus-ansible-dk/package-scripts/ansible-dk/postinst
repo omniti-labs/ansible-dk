@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Perform necessary ansibledk setup steps
+# Perform necessary ansible-dk setup steps
 # after package is installed.
 #
 
 PROGNAME=`basename $0`
-INSTALLER_DIR=/opt/ansibledk
+INSTALLER_DIR=/opt/ansible-dk
 USAGE="usage: $0"
 
 error_exit()

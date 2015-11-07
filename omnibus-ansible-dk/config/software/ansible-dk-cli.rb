@@ -1,4 +1,4 @@
-name "ansible-dk"
+name "ansible-dk-cli"
 description "One day this might be a generic CLI tool; today it is a hack to make shell-init work"
 
 build do
