@@ -47,13 +47,9 @@ The workflow that the authors use includes using test-kitchen to create and dest
 In the near-term, we aim to include:
 
  * ansible
-
  * ansible-linter
-
  * test-kitchen
-
  * serverspec
-
  * AWS support (boto, kitchen-ec2, possibly AWS CLI)
 
 Longer-term, we're open to contributions from the community - such as BATS support, or digitalocean support, for example.  But those are not the current needs of OmniTI, so we will not be focusing on them at the moment.
@@ -81,7 +77,7 @@ Probably a great many!  If you find one, open an issue at https://github.com/omn
 
 If you have something you wish to see added, but have no idea how to do that in Omnibus, please open an issue at https://github.com/omniti-labs/ansible-dk/issues .
 
-If you have some experience doing Omnibus packaging, which is perhaps not for the faint of heart, or are simply exceptionally intrepid, have a read over the Omnibus instructions at https://github.com/chef/omnibus , then do the usual fork-PR workflow.
+If you have some experience doing Omnibus packaging, which is perhaps not for the faint of heart, or are simply exceptionally intrepid, have a read over the Omnibus instructions at https://github.com/chef/omnibus , then do the usual fork-PR workflow on this repo.
 
 ## Acknowledgements
 
