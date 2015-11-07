@@ -11,10 +11,11 @@ build_iteration 1
 
 # Version pinning.  Most of the software definitons have a
 # default_version of "master" (ie, floating on latest)
-override :ruby,           version: "2.1.7"
-override :bundler,        version: "1.10.6"
-override :rubygems,       version: "2.4.8"
-override :'test-kitchen', version: "v1.4.2"
+override :ruby,              version: "2.1.7"
+override :bundler,           version: "1.10.6"
+override :rubygems,          version: "2.4.8"
+override :'test-kitchen',    version: "v1.4.2"
+override :'kitchen-ansible', version: "0.0.30"
 
 # Creates required build directories
 dependency "preparation"
@@ -31,6 +32,7 @@ dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 dependency "test-kitchen"
+dependency "kitchen-ansible"
 
 # Version manifest file
 dependency "version-manifest"
