@@ -2,8 +2,8 @@ name "ansible-dk"
 maintainer "OmniTI"
 homepage "https://github.com/omniti-labs/ansible-dk"
 
-# Defaults to C:/ansibledk on Windows
-# and /opt/ansibledk on all other platforms
+# Defaults to C:/ansible-dk on Windows
+# and /opt/ansible-dk on all other platforms
 install_dir "#{default_root}/#{name}"
 
 build_version Omnibus::BuildVersion.semver
@@ -22,7 +22,7 @@ override :'kitchen-vagrant', version: "v0.19.0"
 # Creates required build directories
 dependency "preparation"
 
-# ansibledk dependencies/components
+# ansible-dk dependencies/components
 
 # Python land
 dependency "python"
