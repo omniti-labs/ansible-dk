@@ -1,4 +1,4 @@
-name "ansibledk"
+name "ansible-dk"
 maintainer "OmniTI"
 homepage "https://github.com/omniti-labs/ansible-dk"
 
@@ -27,7 +27,7 @@ dependency "preparation"
 # Python land
 dependency "python"
 dependency "pip"
-dependency "ansible-dk"
+dependency "ansible-dk-cli"
 
 # Ruby land
 dependency "ruby"
