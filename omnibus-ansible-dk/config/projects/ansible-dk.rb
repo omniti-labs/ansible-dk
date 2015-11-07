@@ -43,4 +43,8 @@ dependency "version-manifest"
 exclude "**/.git"
 exclude "**/bundler/git"
 
+package :pkg do
+  identifier 'com.omniti.labs.ansible-dk'
+end
+
 compress :dmg
