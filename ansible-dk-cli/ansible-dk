@@ -23,17 +23,16 @@ fi
 RUBY_ABI=2.1.0
 PYTHON_ABI=2.7
 
-# Ensure the user has a .ansibledk directory for
+# Ensure the user has a .ansible-dk directory for
 # private user gems
-mkdir -p $HOME/.ansibledk
-mkdir -p $HOME/.ansibledk/gem
-mkdir -p $HOME/.ansibledk/python
+mkdir -p $HOME/.ansible-dk
+mkdir -p $HOME/.ansible-dk/gem
+mkdir -p $HOME/.ansible-dk/python
 
-# TODO: python paths
-echo export PATH=\"/opt/ansibledk/bin:$HOME/.ansibledk/gem/ruby/$RUBY_ABI/bin:/opt/ansibledk/embedded/bin:$PATH\"
-echo export GEM_ROOT=\"/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
-echo export GEM_HOME=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI\"
-echo export GEM_PATH=\"$HOME/.ansibledk/gem/ruby/$RUBY_ABI:/opt/ansibledk/embedded/lib/ruby/gems/$RUBY_ABI\"
-echo export PYTHONUSERBASE=\"$HOME/.ansibledk/python\"
+echo export PATH=\"/opt/ansible-dk/bin:$HOME/.ansible-dk/gem/ruby/$RUBY_ABI/bin:/opt/ansible-dk/embedded/bin:$PATH\"
+echo export GEM_ROOT=\"/opt/ansible-dk/embedded/lib/ruby/gems/$RUBY_ABI\"
+echo export GEM_HOME=\"$HOME/.ansible-dk/gem/ruby/$RUBY_ABI\"
+echo export GEM_PATH=\"$HOME/.ansible-dk/gem/ruby/$RUBY_ABI:/opt/ansible-dk/embedded/lib/ruby/gems/$RUBY_ABI\"
+echo export PYTHONUSERBASE=\"$HOME/.ansible-dk/python\"
 echo export PIP_INSTALL_OPTION=\"--user\"
 # echo export PYTHONPATH=
