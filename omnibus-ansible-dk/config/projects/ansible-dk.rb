@@ -32,6 +32,7 @@ dependency "python"
 dependency "pip"
 dependency "ansible-dk-cli"
 dependency "awscli"
+dependency "ansible"
 
 # Ruby land
 dependency "ruby"
