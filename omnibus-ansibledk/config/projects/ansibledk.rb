@@ -16,6 +16,8 @@ override :bundler,           version: "1.10.6"
 override :rubygems,          version: "2.4.8"
 override :'test-kitchen',    version: "v1.4.2"
 override :'kitchen-ansible', version: "0.0.30"
+override :'kitchen-vagrant', version: "v0.19.0"
+
 
 # Creates required build directories
 dependency "preparation"
@@ -33,6 +35,7 @@ dependency "rubygems"
 dependency "bundler"
 dependency "test-kitchen"
 dependency "kitchen-ansible"
+dependency "kitchen-vagrant"
 
 # Version manifest file
 dependency "version-manifest"
