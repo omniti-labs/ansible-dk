@@ -16,6 +16,7 @@ dependency "preparation"
 dependency "python"
 dependency "pip"
 dependency "ruby"
+dependency "ansible"
 dependency "ansible-dk"
 
 # Version manifest file
