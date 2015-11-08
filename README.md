@@ -36,7 +36,13 @@ This allows us to manage our own module universe without the user having to know
 
 This gets symlinked into /usr/bin or /usr/local/bin, depending on your OS, and is the only change outside of /opt/ansibledk.
 
-Currently, this tool has one function - to setup the shell vars for the rest of the kit.  In the future, it may do more.
+#### test-kitchen, kitchen-vagrant, and kitchen-ansible
+
+Test Kitchen is a very popular infrastructure testing harness.
+
+#### AWS Support: kitchen-ec2, AWS cli, boto library, and jq
+
+Everything you need to have test machines in AWS, plus have dynamic inventory.  jq is included for inventory diagnostics.
 
 ## Project Roadmap
 
@@ -48,9 +54,7 @@ In the near-term, we aim to include:
 
  * ansible
  * ansible-linter
- * test-kitchen
  * serverspec
- * AWS support (boto, kitchen-ec2, possibly AWS CLI)
 
 Longer-term, we're open to contributions from the community - such as BATS support, or digitalocean support, for example.  But those are not the current needs of OmniTI, so we will not be focusing on them at the moment.
 
