@@ -19,6 +19,7 @@ override :'kitchen-ansible', version: "0.0.30"
 override :'kitchen-vagrant', version: "v0.19.0"
 override :'kitchen-ec2',     version: "v0.10.0"
 override :awscli,            version: "1.9.5"
+override :jq,                version: "jq-1.5"
 
 
 # Creates required build directories
@@ -40,6 +41,9 @@ dependency "test-kitchen"
 dependency "kitchen-ansible"
 dependency "kitchen-vagrant"
 dependency "kitchen-ec2"
+
+# Others
+dependency "jq"
 
 # Version manifest file
 dependency "version-manifest"

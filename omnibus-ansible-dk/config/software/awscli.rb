@@ -5,6 +5,9 @@ dependency "pip"
 dependency "boto"
 
 build do
-  # ship_license "https://raw.githubusercontent.com/aws/aws-cli/develop/LICENSE.txt"
-  command "#{install_dir}/embedded/bin/pip install -I --install-option=\"--install-scripts=#{install_dir}/bin\" #{name}==#{version}"
+  command "#{install_dir}/embedded/bin/pip install -I --install-option=\"--install-scripts=#{install_dir}/embedded/bin\" #{name}==#{version}"
+
+  # This is an Officially Exposed Tool
+  link "#{install_dir}/embedded/bin/aws", "#{install_dir}/bin"
+
 end
