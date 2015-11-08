@@ -18,6 +18,7 @@ override :'test-kitchen',    version: "v1.4.2"
 override :'kitchen-ansible', version: "0.0.30"
 override :'kitchen-vagrant', version: "v0.19.0"
 override :'kitchen-ec2',     version: "v0.10.0"
+override :awscli,            version: "1.9.5"
 
 
 # Creates required build directories
@@ -29,6 +30,7 @@ dependency "preparation"
 dependency "python"
 dependency "pip"
 dependency "ansible-dk-cli"
+dependency "awscli"
 
 # Ruby land
 dependency "ruby"
