@@ -12,7 +12,7 @@ Sorry, we haven't released any yet.
 
 ### Using the binaries
 
-Installation should be straightforward using your OS's normal package manager.  We install to /opt/ansibledk, and are careful to not interfere with any existing system Python or Ruby installations.  Uninstalls and upgrades should be clean.
+Installation should be straightforward using your OS's normal package manager.  We install to /opt/ansible-dk, and are careful to not interfere with any existing system Python or Ruby installations.  Uninstalls and upgrades should be clean.
 
 Once you have your package installed, to use the tools, run this magic command in your Bash shell:
 
@@ -34,7 +34,7 @@ This allows us to manage our own module universe without the user having to know
 
 #### ansible-dk CLI tool
 
-This gets symlinked into /usr/bin or /usr/local/bin, depending on your OS, and is the only change outside of /opt/ansibledk.
+This gets symlinked into /usr/bin or /usr/local/bin, depending on your OS, and is the only change outside of /opt/ansible-dk.
 
 #### test-kitchen, kitchen-vagrant, and kitchen-ansible
 
