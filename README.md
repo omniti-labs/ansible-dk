@@ -107,7 +107,7 @@ For the enthusiastic response
 
 For basically saying, sure, why not
 
- * Joseph Holsten of DataDog
+ * Joseph Holsten
 
 For giving us a clue for how to build and package python modules under omnibus
 
