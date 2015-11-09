@@ -1,7 +1,7 @@
-ansibledk Omnibus project
+ansible-dk Omnibus project
 =========================
 This project creates full-stack platform-specific packages for
-`ansibledk`!
+`ansible-dk`!
 
 Installation
 ------------
@@ -19,7 +19,7 @@ Usage
 You create a platform-specific package using the `build project` command:
 
 ```shell
-$ bin/omnibus build ansibledk
+$ bin/omnibus build ansible-dk
 ```
 
 The platform/architecture type of the package created will match the platform
