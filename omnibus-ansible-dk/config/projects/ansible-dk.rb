@@ -23,8 +23,8 @@ override :jq,                version: "jq-1.5"
 override :ansible,           version: "1.9.4"
 override :paramiko,          version: "1.16.0"
 override :pycrypto,          version: "2.6.1"
-
-
+override :'ansible-lint',    version: "2.1.3"
+override :'ansible-toolkit', version: "1.3.2"
 
 # Creates required build directories
 dependency "preparation"
@@ -37,6 +37,8 @@ dependency "pip"
 dependency "ansible-dk-cli"
 dependency "awscli"
 dependency "ansible"
+dependency "ansible-lint"
+dependency "ansible-toolkit"
 
 # Ruby land
 dependency "ruby"
