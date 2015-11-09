@@ -20,6 +20,10 @@ override :'kitchen-vagrant', version: "v0.19.0"
 override :'kitchen-ec2',     version: "v0.10.0"
 override :awscli,            version: "1.9.5"
 override :jq,                version: "jq-1.5"
+override :ansible,           version: "1.9.4"
+override :paramiko,          version: "1.16.0"
+override :pycrypto,          version: "2.6.1"
+
 
 
 # Creates required build directories
