@@ -30,6 +30,7 @@ end
 dependency "rubygems"
 dependency "nokogiri"
 dependency "bundler" # Added, dep order sometimes hit test-kitchen before bundler
+dependency "appbundler" # Added, dep order sometimes hit test-kitchen before appbundler
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
@@ -39,4 +40,6 @@ build do
 
   gem "install pkg/test-kitchen-*.gem" \
       " --no-ri --no-rdoc", env: env
+
+  appbundle 'test-kitchen'
 end
