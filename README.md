@@ -36,6 +36,18 @@ This allows us to manage our own module universe without the user having to know
 
 This gets symlinked into /usr/bin or /usr/local/bin, depending on your OS, and is the only change outside of /opt/ansible-dk.
 
+#### ansible 1.9.4
+
+The ansible tool itself.
+
+#### ansible-lint
+
+A linter for ansible.
+
+#### ansilbe-toolkit
+
+A bundle of tracing, vault management, and other tools.
+
 #### test-kitchen, kitchen-vagrant, and kitchen-ansible
 
 Test Kitchen is a very popular infrastructure testing harness.
@@ -52,9 +64,7 @@ The workflow that the authors use includes using test-kitchen to create and dest
 
 In the near-term, we aim to include:
 
- * ansible
- * ansible-linter
- * serverspec
+ * ansible 2 (as ansible2)
 
 Longer-term, we're open to contributions from the community - such as BATS support, or digitalocean support, for example.  But those are not the current needs of OmniTI, so we will not be focusing on them at the moment.
 
@@ -64,7 +74,6 @@ Based on OmniTI's (perhaps idiosyncratic) needs, we initially plan to build pack
 
  * OS X Yosemite
  * OS X El Capitan (commiting to latest Mac OS, plus previous version)
- * Ubuntu 13.10 (don't ask)
  * Ubuntu 14.04 (commiting to LTS support on ubuntu)
 
 We do not currently have a need for Debian, CentOS, RHEL, or FreeBSD packaging, but such contributions would be very welcome from the community.
