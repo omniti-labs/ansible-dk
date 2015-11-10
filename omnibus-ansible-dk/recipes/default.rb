@@ -11,5 +11,6 @@ git '/var/cache/omnibus-project' do
 end
 
 omnibus_build 'ansible-dk' do
-  project_dir '/var/cache/omnibus-project'  
+  project_dir '/var/cache/omnibus-project/omnibus-ansible-dk'
+  config_overrides({dummy: 'value' })
 end
