@@ -2,7 +2,7 @@ name "kitchen-ansible"
 default_version "master"
 relative_path "kitchen-ansible"
 
-source git: "git@github.com:neillturner/kitchen-ansible.git"
+source git: "git://github.com/neillturner/kitchen-ansible.git"
 
 if windows?
   dependency "ruby-windows"

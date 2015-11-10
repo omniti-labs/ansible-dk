@@ -2,7 +2,7 @@ name "kitchen-ec2"
 default_version "master"
 relative_path "kitchen-ec2"
 
-source git: "git@github.com:test-kitchen/kitchen-ec2.git"
+source git: "git://github.com/test-kitchen/kitchen-ec2.git"
 
 if windows?
   dependency "ruby-windows"
