@@ -1,7 +1,7 @@
 name "jq"
 default_version "master"
 relative_path "jq"
-source git: "git@github.com:stedolan/jq.git"
+source git: "git://github.com/stedolan/jq.git"
 
 dependency "libtool"
 dependency "make"
