@@ -8,7 +8,7 @@ That means, this project is a set of scripts to build OS packages that bundle to
 
 ### Downloading the OS Packages
 
-Sorry, we haven't released any yet.
+Packages for Ubuntu 14.04 (.deb) and Mac OS X (.dmg) are available at https://bintray.com/omniti-labs/ansible-dk/ansible-dk/view .
 
 ### Using the binaries
 
