@@ -2,7 +2,7 @@ name "serverspec"
 default_version "master"
 relative_path "serverspec"
 
-source git: "git@github.com:mizzy/serverspec.git"
+source git: "git://github.com/mizzy/serverspec.git"
 
 if windows?
   dependency "ruby-windows"
