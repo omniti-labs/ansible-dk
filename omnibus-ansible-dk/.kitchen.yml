@@ -14,13 +14,10 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
     run_list: apt::default
-  - name: ubuntu-13.10
-    run_list: apt::default
 
 suites:
   - name: default
     run_list:
-      - ansible-dk-builder::fix-ubuntu-1310  # Patches the APT repo url for EOL'd ubuntu-13.10    
       - omnibus::default                     # Installs omnibus and the build toolchain
       - ansible-dk-builder::default          # Executes the build
     attributes:
