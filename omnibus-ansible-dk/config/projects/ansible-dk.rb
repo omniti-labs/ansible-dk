@@ -26,6 +26,8 @@ override :pycrypto,          version: "2.6.1"
 override :'ansible-lint',    version: "2.1.3"
 override :'ansible-toolkit', version: "1.3.2"
 override :appbundler,        version: "0.6.0"
+override :serverspec,        version: "v2.24.2"
+
 
 # Creates required build directories
 dependency "preparation"
@@ -50,6 +52,7 @@ dependency "test-kitchen"
 dependency "kitchen-ansible"
 dependency "kitchen-vagrant"
 dependency "kitchen-ec2"
+dependency "serverspec"
 
 # Others
 dependency "jq"
