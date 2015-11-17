@@ -44,7 +44,7 @@ The ansible tool itself.
 
 A linter for ansible.
 
-#### ansilbe-toolkit
+#### ansible-toolkit
 
 A bundle of tracing, vault management, and other tools.
 
