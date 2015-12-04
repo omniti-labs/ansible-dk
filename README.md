@@ -42,7 +42,7 @@ The ansible tool itself.
 
 #### ansible-lint
 
-[Ansible-lint](https://github.com/willthames/ansible-lint) linter for ansible.
+[Ansible-lint](https://github.com/willthames/ansible-lint) is a [linter](https://en.wikipedia.org/wiki/Lint_%28software%29) for ansible.
 
 #### ansible-toolkit
 
