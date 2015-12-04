@@ -42,15 +42,19 @@ The ansible tool itself.
 
 #### ansible-lint
 
-A linter for ansible.
+[Ansible-lint](https://github.com/willthames/ansible-lint) is a [linter](https://en.wikipedia.org/wiki/Lint_%28software%29) for ansible.
 
 #### ansible-toolkit
 
-A bundle of tracing, vault management, and other tools.
+[Ansible-toolkit](https://github.com/dellis23/ansible-toolkit) provides several tools to improve visibility and predictability of roles and vault management.
 
 #### test-kitchen, kitchen-vagrant, and kitchen-ansible
 
-Test Kitchen is a very popular infrastructure testing harness.
+[Test Kitchen](http://kitchen.ci) is a very popular infrastructure testing harness.
+
+#### Molecule
+
+[Molecule](https://github.com/metacloud/molecule) is a tool to ease (automated) testing for Ansible roles.
 
 #### AWS Support: kitchen-ec2, AWS cli, boto library, and jq
 
