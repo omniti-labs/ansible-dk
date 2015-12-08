@@ -17,7 +17,7 @@ fi
 
 if [[ "z$2" != "zbash" ]]; then
     echo "Usage: ansible-dk shell-init bash" 1>&2
-    exit 2   
+    exit 2
 fi
 
 RUBY_ABI=2.1.0
@@ -29,7 +29,7 @@ mkdir -p $HOME/.ansible-dk
 mkdir -p $HOME/.ansible-dk/gem
 mkdir -p $HOME/.ansible-dk/python
 
-echo export PATH=\"/opt/ansible-dk/bin:$HOME/.ansible-dk/gem/ruby/$RUBY_ABI/bin:/opt/ansible-dk/embedded/bin:$PATH\"
+echo export PATH=\"/opt/ansible-dk/bin:$HOME/.ansible-dk/python/bin:$HOME/.ansible-dk/gem/ruby/$RUBY_ABI/bin:/opt/ansible-dk/embedded/bin:$PATH\"
 echo export GEM_ROOT=\"/opt/ansible-dk/embedded/lib/ruby/gems/$RUBY_ABI\"
 echo export GEM_HOME=\"$HOME/.ansible-dk/gem/ruby/$RUBY_ABI\"
 echo export GEM_PATH=\"$HOME/.ansible-dk/gem/ruby/$RUBY_ABI:/opt/ansible-dk/embedded/lib/ruby/gems/$RUBY_ABI\"
