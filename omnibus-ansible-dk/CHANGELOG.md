@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added Tools
+- bats 0.4.0 (clintoncwolfe)
 - molecule 1.0.5 (dhutty)
 
 ### Fixes
