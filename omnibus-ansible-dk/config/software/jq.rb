@@ -6,6 +6,8 @@ source git: "git://github.com/stedolan/jq.git"
 dependency "libtool"
 dependency "make"
 dependency "autoconf"
+dependency "automake"
+
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
