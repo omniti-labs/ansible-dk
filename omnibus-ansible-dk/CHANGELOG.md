@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added Tools
-- molecule 1.0.5 (dhutty)
+- molecule 1.0.6 (dhutty)
 
 ### Fixes
 - added automake dep to jq to fix build error (clintoncwolfe)

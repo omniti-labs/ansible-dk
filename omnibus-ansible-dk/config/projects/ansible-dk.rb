@@ -27,7 +27,7 @@ override :'ansible-lint',    version: "2.1.3"
 override :'ansible-toolkit', version: "1.3.2"
 override :appbundler,        version: "0.6.0"
 override :serverspec,        version: "v2.24.2"
-override :molecule,          version: "1.0.5"
+override :molecule,          version: "1.0.6"
 
 
 # Creates required build directories
