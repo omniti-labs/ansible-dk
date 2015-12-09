@@ -1,5 +1,5 @@
 name "molecule"
-default_version "1.0.5"
+default_version "1.0.6"
 
 dependency "python"
 dependency "pip"
@@ -10,7 +10,7 @@ build do
   # This is an Officially Exposed Tool
   [
     'molecule',
-  ].each do |tool|      
+  ].each do |tool|
     link "#{install_dir}/embedded/bin/#{tool}", "#{install_dir}/bin"
   end
 end
