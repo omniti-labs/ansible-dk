@@ -28,6 +28,7 @@ override :'ansible-toolkit', version: "1.3.2"
 override :appbundler,        version: "0.6.0"
 override :serverspec,        version: "v2.24.2"
 override :molecule,          version: "1.0.6"
+override :bats,              version: "v0.4.0"
 
 
 # Creates required build directories
@@ -58,6 +59,7 @@ dependency "serverspec"
 
 # Others
 dependency "jq"
+dependency "bats"
 
 # Version manifest file
 dependency "version-manifest"
@@ -70,3 +72,7 @@ package :pkg do
 end
 
 compress :dmg
+
+
+
+

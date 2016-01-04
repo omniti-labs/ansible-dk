@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added Tools
 - molecule 1.0.6 (dhutty)
+- bats 0.4.0 (clintoncwolfe)
 
 ### Fixes
 - added automake dep to jq to fix build error (clintoncwolfe)
