@@ -2,7 +2,7 @@
 
 An omnibus-based toolkit for working on Ansible-based infrastructure code.
 
-That means, this project is a set of scripts to build OS packages that bundle together a bunch of tools to make developing with Ansible more robust, reliable, fast, and fun - in other words, a SLDC for ansible.  Unless you are contributing to this project, you almost certainly don't need this source code; you're instead looking for the binary OS packages.
+That means, this project is a set of scripts to build OS packages that bundle together a bunch of tools to make developing with Ansible more robust, reliable, fast, and fun - in other words, a SDLC kit for ansible.  Unless you are contributing to this project, you almost certainly don't need this source code; you're instead looking for the binary OS packages.
 
 ## Using the Binaries
 
