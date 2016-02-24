@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-require 'pry'
+#require 'pry'
 require 'fileutils'
 
 module Omnibus
