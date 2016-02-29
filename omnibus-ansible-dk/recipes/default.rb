@@ -10,6 +10,10 @@ git '/var/cache/omnibus-project' do
   user node[:omnibus][:build_user]
 end
 
+link '/var/cache/omnibus-project/omnibus-ansible-dk/.gitconfig' do
+  to "/home/#{node[:omnibus][:build_user]}/.gitconfig"
+end
+
 omnibus_build 'ansible-dk' do
   project_dir '/var/cache/omnibus-project/omnibus-ansible-dk'
   config_overrides({dummy: 'value' })
