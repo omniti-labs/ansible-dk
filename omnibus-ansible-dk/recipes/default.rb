@@ -7,6 +7,7 @@ end
 git '/var/cache/omnibus-project' do
   repository 'https://github.com/omniti-labs/ansible-dk.git'
   action :sync
+  checkout_branch 'no-frozen-testing'
   user node[:omnibus][:build_user]
 end
 
