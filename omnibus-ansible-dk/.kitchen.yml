@@ -1,17 +1,16 @@
 driver:
   name: ec2
-  associate_public_ip: true
-  availability_zone: us-east-1a
+  # availability_zone: ADD THIS IN .kitchen.local.yml
   # aws_ssh_key_id: ADD THIS IN .kitchen.local.yml
   instance_type: m3.large
   # security_group_ids: ADD THIS IN .kitchen.local.yml
-  interface: public
+  interface: private
   # shared_credentials_profile: ADD THIS IN .kitchen.local.yml
   # subnet_id: ADD THIS IN .kitchen.local.yml
   tags:
     project: labs-ansible-dk
     type: build-slave
-    creator: <%= ENV['USER'] %>
+    engineer: <%= ENV['USER'] %>
   
 provisioner:
   name: chef_zero
