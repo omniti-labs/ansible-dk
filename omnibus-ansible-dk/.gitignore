@@ -9,3 +9,4 @@ bin/*
 files/**/cache/
 vendor/cookbooks
 local/
+Gemfile.lock
