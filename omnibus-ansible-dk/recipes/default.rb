@@ -14,6 +14,10 @@ link '/var/cache/omnibus-project/omnibus-ansible-dk/.gitconfig' do
   to "/home/#{node[:omnibus][:build_user]}/.gitconfig"
 end
 
+file '/var/cache/omnibus-project/omnibus-ansible-dk/Gemfile.lock' do
+  action :delete
+end
+
 omnibus_build 'ansible-dk' do
   project_dir '/var/cache/omnibus-project/omnibus-ansible-dk'
   config_overrides({dummy: 'value' })
