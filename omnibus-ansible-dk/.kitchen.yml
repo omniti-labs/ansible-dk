@@ -36,7 +36,5 @@ suites:
       - ansible-dk-builder::default          # Executes the build
     attributes:
       omnibus:
-        build_user:          vagrant
-        build_user_group:    vagrant
-        build_user_password: vagrant
         install_dir:         /opt/ansible-dk
+        project_repo:        /var/cache/omnibus-project

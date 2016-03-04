@@ -1,24 +1,24 @@
 # Use the omnibus-build resource to build the project
 
-directory '/var/cache/omnibus-project' do
+directory node[:omnibus][:project_repo] do
   owner node[:omnibus][:build_user]
 end
 
-git '/var/cache/omnibus-project' do
+git node[:omnibus][:project_repo] do
   repository 'https://github.com/omniti-labs/ansible-dk.git'
   action :sync
   user node[:omnibus][:build_user]
 end
 
-link '/var/cache/omnibus-project/omnibus-ansible-dk/.gitconfig' do
+link "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk/.gitconfig" do
   to "/home/#{node[:omnibus][:build_user]}/.gitconfig"
 end
 
-file '/var/cache/omnibus-project/omnibus-ansible-dk/Gemfile.lock' do
+file "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk/Gemfile.lock" do
   action :delete
 end
 
 omnibus_build 'ansible-dk' do
-  project_dir '/var/cache/omnibus-project/omnibus-ansible-dk'
+  project_dir "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk"
   config_overrides({dummy: 'value' })
 end
