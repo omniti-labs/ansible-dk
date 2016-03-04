@@ -51,3 +51,6 @@ software_gems ['omnibus-software' ]
 # ------------------------------
 windows_arch   %w{x86 x64}.include?((ENV['OMNIBUS_WINDOWS_ARCH'] || '').downcase) ?
                  ENV['OMNIBUS_WINDOWS_ARCH'].downcase.to_sym : :x86
+
+append_timestamp false
+
