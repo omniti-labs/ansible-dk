@@ -5,7 +5,7 @@
 import click
 import os
 import sys
-
+import json
 
 ###################################################
 # Defaults
@@ -13,10 +13,28 @@ RUBY_ABI = "2.1.0"
 PYTHON_ABI = "2.7"
 HOME = os.getenv("HOME")
 
+def check_version():
+    file='/opt/ansible-dk/version-manifest.json'
+    try:
+        version = json.loads(open(file).read())['build_version']
+    except ValueError as e:
+        print "%s in %s" % (e, file)
+        sys.exit(-1)
+    except KeyError as e:
+        print "Could not find %s in %s" % (e, file)
+        sys.exit(-1)
+    except (IOError, OSError) as e:
+        message = "Error checking version: %s" % e.strerror
+        if type(e.filename) == str:
+            message += " %s" % e.filename
+        print(message)
+        sys.exit(e.errno)
+    return version
 
 ###################################################
 # Generic top-level group definitions
 @click.group()
+@click.version_option(version=check_version())
 def cli():
     pass
 
