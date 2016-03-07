@@ -29,7 +29,7 @@ def generate():
 @cli.command(name='shell-init')
 @click.option('--debug', is_flag=True, help="Enable debug mode")
 @click.argument('shell', default='bash')
-# TODO: Currently shell argument doesn't actually do anything.  Implement other shells, zsh anyone?  
+# TODO: Currently shell argument doesn't actually do anything.  Implement other shells, zsh anyone?
 def shell_init(shell, debug=False):
     if debug:
         print("[DEBUG] Home directory = %s" % HOME)
@@ -56,7 +56,7 @@ def shell_init(shell, debug=False):
 
     # Print out environment variables for the shell
     print("export PATH=\"/opt/ansible-dk/bin:"+HOME+"/.ansible-dk/python/bin:"+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
-          "/bin:/opt/ansible-dk/embedded/bin:$PATH")
+          "/bin:/opt/ansible-dk/embedded/bin:$PATH\"")
     print("export GEM_ROOT=\"/opt/ansible-dk/embedded/lib/ruby/gems/"+RUBY_ABI+"\"")
     print("export GEM_HOME=\""+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+"\"")
     print("export GEM_PATH=\""+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
