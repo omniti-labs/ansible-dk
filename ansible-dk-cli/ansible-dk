@@ -28,7 +28,9 @@ def generate():
 
 @cli.command(name='shell-init')
 @click.option('--debug', is_flag=True, help="Enable debug mode")
-def shell_init(debug=False):
+@click.argument('shell', default='bash')
+# TODO: Currently shell argument doesn't actually do anything.  Implement other shells, zsh anyone?  
+def shell_init(shell, debug=False):
     if debug:
         print("[DEBUG] Home directory = %s" % HOME)
 
