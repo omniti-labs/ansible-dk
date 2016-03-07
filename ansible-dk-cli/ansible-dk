@@ -26,7 +26,7 @@ def generate():
     pass
 
 
-@cli.command()
+@cli.command(name='shell-init')
 @click.option('--debug', is_flag=True, help="Enable debug mode")
 def shell_init(debug=False):
     if debug:
