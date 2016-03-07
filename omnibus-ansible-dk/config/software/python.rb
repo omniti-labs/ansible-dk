@@ -25,6 +25,7 @@ dependency "bzip2"
 
 version("2.7.5") { source md5: "b4f01a1d0ba0b46b05c73b2ac909b1df" }
 version("2.7.9") { source md5: "5eebcaa0030dc4061156d3429657fb83" }
+version("2.7.11") { source md5: "6b6076ec9e93f05dd63e47eb9c15728b" }
 
 source url: "http://python.org/ftp/python/#{version}/Python-#{version}.tgz"
 
@@ -38,7 +39,7 @@ build do
 
   # Added - omniti labs
   env['MACOSX_DEPLOYMENT_TARGET'] = '10.9' if mac_os_x?
-  
+
   command "./configure" \
           " --prefix=#{install_dir}/embedded" \
           " --enable-shared" \
