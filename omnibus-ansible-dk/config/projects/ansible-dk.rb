@@ -1,3 +1,4 @@
+
 name "ansible-dk"
 maintainer "OmniTI"
 homepage "https://github.com/omniti-labs/ansible-dk"
@@ -11,23 +12,25 @@ build_iteration 1
 
 # Version pinning.  Most of the software definitons have a
 # default_version of "master" (ie, floating on latest)
-override :ruby,              version: "2.1.7"
-override :bundler,           version: "1.10.6"
-override :rubygems,          version: "2.4.8"
-override :'test-kitchen',    version: "v1.4.2"
-override :'kitchen-ansible', version: "0.0.30"
+override :ruby,              version: "2.1.8"
+override :bundler,           version: "1.11.2"
+override :rubygems,          version: "v2.6.1"
+override :'test-kitchen',    version: "v1.6.0"
+override :'kitchen-ansible', version: "0.0.38"
 override :'kitchen-vagrant', version: "v0.19.0"
-override :'kitchen-ec2',     version: "v0.10.0"
-override :awscli,            version: "1.9.5"
+override :'kitchen-ec2',     version: "v1.0.0"
+override :awscli,            version: "1.10.1"
 override :jq,                version: "jq-1.5"
-override :ansible,           version: "1.9.4"
+override :python,            version: "2.7.11"
+override :pip,               version: "8.0.3"
+override :ansible,           version: "2.0.0.2"
 override :paramiko,          version: "1.16.0"
 override :pycrypto,          version: "2.6.1"
-override :'ansible-lint',    version: "2.1.3"
+override :'ansible-lint',    version: "2.3.3"
 override :'ansible-toolkit', version: "1.3.2"
 override :appbundler,        version: "v0.7.0"
-override :serverspec,        version: "v2.24.2"
-override :molecule,          version: "1.0.6"
+override :serverspec,        version: "v2.30.1"
+override :molecule,          version: "1.3.0"
 override :bats,              version: "v0.4.0"
 
 
@@ -72,7 +75,3 @@ package :pkg do
 end
 
 compress :dmg
-
-
-
-

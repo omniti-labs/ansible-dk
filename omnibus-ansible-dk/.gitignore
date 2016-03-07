@@ -1,7 +1,7 @@
 *.gem
 .bundle
 .kitchen/
-.kitchen.local.yml
+.kitchen.*.yml
 vendor/bundle
 pkg/*
 .vagrant
