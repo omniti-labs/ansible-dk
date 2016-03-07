@@ -43,13 +43,14 @@ def shell_init(debug=False):
             if debug:
                 print("[DEBUG] Creating directory: %s" % directory)
             os.mkdir(directory)
-        except FileNotFoundError as e:
-            print("Error: Unable to create directory: %s" % e.filename)
-            sys.exit(-1)
-        except FileExistsError as e:
-            if debug:
-                print("[DEBUG] directory already exists - skipping - %s" % e.filename)
-            pass
+        except OSError as e:
+            if e.errno == 17: # if file exists
+                if debug:
+                		print("[DEBUG] %s - skipping - %s" % (e.strerror, e.filename))
+                pass
+            else:
+                print("Error creating %s - %s(%d)" % (e.filename, e.strerror, e.errno))
+                sys.exit(e.errno)
 
     # Print out environment variables for the shell
     print("export PATH=\"/opt/ansible-dk/bin:"+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
