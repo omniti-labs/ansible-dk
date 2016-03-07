@@ -55,7 +55,7 @@ def shell_init(shell, debug=False):
                 sys.exit(e.errno)
 
     # Print out environment variables for the shell
-    print("export PATH=\"/opt/ansible-dk/bin:"+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
+    print("export PATH=\"/opt/ansible-dk/bin:"+HOME+"/.ansible-dk/python/bin:"+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
           "/bin:/opt/ansible-dk/embedded/bin:$PATH")
     print("export GEM_ROOT=\"/opt/ansible-dk/embedded/lib/ruby/gems/"+RUBY_ABI+"\"")
     print("export GEM_HOME=\""+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+"\"")
