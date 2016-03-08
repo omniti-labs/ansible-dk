@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.0] - 2016-03-07
+
+### Updated tools (jblancett)
+- ansible is now at 2.0.0.2
+- python is now at 2.7.11
+- ruby is now at 2.1.8
+- all other built in tools have been updated to their latest available versions
+
+### Improvements
+- several fixes and improvements to debian build process (clintoncwolfe, jblancett)
+- replaced ansible-dk cli tool with a more robust python one (mbrannigan, jblancett)
+
 ## [0.2.0] - 2016-01-04
 
 ### Added Tools
@@ -32,4 +44,3 @@ Initial public release
 - kitchen-vagrant 0.19.0
 - serverspec  2.24.2
 - test-kitchen 1.4.2
-
