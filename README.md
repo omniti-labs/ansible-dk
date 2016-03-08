@@ -8,7 +8,7 @@ That means, this project is a set of scripts to build OS packages that bundle to
 
 ### Downloading the OS Packages
 
-Packages for Ubuntu 14.04 (.deb) and Mac OS X (.dmg) are available at https://bintray.com/omniti-labs/ansible-dk/ansible-dk/view .
+Packages for Ubuntu 14.04 (.deb) and Mac OS X (.dmg) are available at https://github.com/omniti-labs/ansible-dk/releases/latest .
 
 ### Using the binaries
 
@@ -36,7 +36,7 @@ This allows us to manage our own module universe without the user having to know
 
 This gets symlinked into /usr/bin or /usr/local/bin, depending on your OS, and is the only change outside of /opt/ansible-dk.
 
-#### ansible 1.9.4
+#### ansible 2.0.x
 
 The ansible tool itself.
 
@@ -66,11 +66,7 @@ Everything you need to have test machines in AWS, plus have dynamic inventory.  
 
 The workflow that the authors use includes using test-kitchen to create and destroy test VMs, with serverspec being used to author the tests.  That's not prescriptive, though - you can do whatever you like.  Our goal is for the Ansible DK to provide enough variety of tools for you to implement a workflow that you prefer.
 
-In the near-term, we aim to include:
-
- * ansible 2 (as ansible2)
-
-Longer-term, we're open to contributions from the community - such as BATS support, or digitalocean support, for example.  But those are not the current needs of OmniTI, so we will not be focusing on them at the moment.
+Long-term, we're open to contributions from the community - such as BATS support, or digitalocean support, for example.  But those are not the current needs of OmniTI, so we will not be focusing on them at the moment.
 
 ### Platforms we plan to target
 
@@ -110,7 +106,7 @@ This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI COmput
 ### Special Thanks
 
  * Robert Treat, CEO of OmnITI
- 
+
 He said, "You should totally do that."  So, we did.
 
  * devops-toolchain Google Group
@@ -128,14 +124,3 @@ For giving us a clue for how to build and package python modules under omnibus
  * Chef, Inc.
 
 For Omnibus, and the many build definitions we are using.
-
-
-
-
-
-
-
-
-
-
-
