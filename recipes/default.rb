@@ -10,15 +10,15 @@ git node[:omnibus][:project_repo] do
   user node[:omnibus][:build_user]
 end
 
-link "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk/.gitconfig" do
+link "#{node[:omnibus][:project_repo]}/.gitconfig" do
   to "/home/#{node[:omnibus][:build_user]}/.gitconfig"
 end
 
-file "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk/Gemfile.lock" do
+file "#{node[:omnibus][:project_repo]}/Gemfile.lock" do
   action :delete
 end
 
 omnibus_build 'ansible-dk' do
-  project_dir "#{node[:omnibus][:project_repo]}/omnibus-ansible-dk"
+  project_dir "#{node[:omnibus][:project_repo]}"
   config_overrides({dummy: 'value' })
 end
