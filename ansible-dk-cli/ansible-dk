@@ -90,7 +90,8 @@ def verify():
         'ansible-lint --version',
         'ruby --version',
         'kitchen --version',
-        'gem list ^kitchen-* | tail -n+0',
+        'gem list ^kitchen-* serverspec | tail -n+0',
+        'jq --version'
     ]
     for command in commands:
         if os.system(command) != 0:
