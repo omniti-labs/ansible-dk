@@ -1,1 +1,13 @@
 **/.DS_Store
+*.gem
+.bundle
+.kitchen/
+.kitchen.*.yml
+vendor/bundle
+pkg/*
+.vagrant
+bin/*
+files/**/cache/
+vendor/cookbooks
+local/
+Gemfile.lock
