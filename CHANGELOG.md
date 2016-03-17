@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.1] - 2016-03-17
+
+- fixed ansible-dk cli path issue - https://github.com/omniti-labs/ansible-dk/issues/61
+
 ## [1.1.0] - 2016-03-14
 
 - Removed ansible-toolkit - https://github.com/omniti-labs/ansible-dk/issues/58
