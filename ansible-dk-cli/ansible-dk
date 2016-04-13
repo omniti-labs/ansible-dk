@@ -123,7 +123,7 @@ def generate_role(name, playbook):
     print "Generating role named %s using playbook %s" % (name, playbook)
     run_ansible(playbook, {'role_name': name})
 
-def run_ansible(playbook, vars):
+def run_ansible(playbook, vars=None):
     if not os.path.exists(playbook):
         print 'Error - specified role generator playbook does not exist'
         sys.exit()
@@ -133,7 +133,8 @@ def run_ansible(playbook, vars):
     variable_manager = VariableManager()
     inventory = Inventory(loader=loader, variable_manager=variable_manager, host_list='localhost')
     variable_manager.set_inventory(inventory)
-    variable_manager.extra_vars = vars
+    if vars:
+        variable_manager.extra_vars = vars
     playbook_executor.PlaybookExecutor(
         playbooks=[playbook],
         inventory=inventory,
