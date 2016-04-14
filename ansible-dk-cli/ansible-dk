@@ -6,6 +6,7 @@ import click
 import os
 import sys
 import json
+import yaml
 from tempfile import NamedTemporaryFile
 from ansible.executor import playbook_executor
 from ansible.inventory import Inventory
@@ -18,6 +19,30 @@ from collections import namedtuple
 RUBY_ABI = "2.1.0"
 PYTHON_ABI = "2.7"
 HOME = os.getenv("HOME")
+
+def get_config(debug=False):
+    #TODO: pass debug properly
+    config_path=os.path.expanduser('~/.ansible-dk/config')
+    #TODO: absolute path for default generator repo
+    config = {
+        'generator': {
+            'repo': 'generators/'
+        }
+    }
+    if os.path.isfile(config_path):
+        try:
+            config.update(yaml.load(open(config_path, 'r')))
+            if debug:
+                click.echo("Loaded config from %s:\n%s" % (config_path, config))
+            return config
+        except:
+            if debug:
+                click.echo("Error loading config file %s" % config_path)
+            return config
+    else:
+        if debug:
+            click.echo("No config file found at %s" % config_path)
+        return config
 
 # pull version from version-manifest file left by package install
 def check_version():
@@ -111,11 +136,9 @@ def verify():
 def generate():
     pass
 
-
-#TODO: absolute path and check a config file for default generator repo path
 _generator_options = [
     click.option('--debug', is_flag=True, help="Enable debug mode"),
-    click.option('--generator-repo', '-g', default='generators/', help='Path to custom generator repo'),
+    click.option('--generator-repo', '-g', default=get_config()['generator']['repo'], help='Path to custom generator repo'),
     click.argument('path', type=click.Path())
 ]
 def generator_options(fn):
