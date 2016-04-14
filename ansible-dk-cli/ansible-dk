@@ -76,6 +76,8 @@ def shell_init(shell, debug=False):
     print("export GEM_HOME=\""+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+"\"")
     print("export GEM_PATH=\""+HOME+"/.ansible-dk/gem/ruby/"+RUBY_ABI+ \
           ":/opt/ansible-dk/embedded/lib/ruby/gems/"+RUBY_ABI+"\"")
+    print("export PYTHONPATH=\""+HOME+"/.ansible-dk/python/lib/python"+PYTHON_ABI+"/site-packages"+ \
+          ":/opt/ansible-dk/embedded/lib/python"+PYTHON_ABI+"/site-packages\"")
     print("export PYTHONUSERBASE=\""+HOME+"/.ansible-dk/python\"")
     print("export PIP_INSTALL_OPTION=\"--user\"")
 
