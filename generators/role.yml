@@ -2,8 +2,6 @@
 - hosts: localhost
   connection: local
   vars:
-    role_name: example
-    role_path: "."
     role_subdirectories:
       - tasks
       - handlers
@@ -14,12 +12,12 @@
   tasks:
 
   - name: create top level role directory
-    file: state=directory path="{{ role_path }}/{{ role_name }}" recurse=yes
+    file: state=directory path="{{ role_path }}" recurse=yes
 
   - name: create subdirectories
-    file: state=directory path="{{ role_path }}/{{ role_name }}/{{ item }}"
+    file: state=directory path="{{ role_path }}/{{ item }}"
     with_items: "{{ role_subdirectories }}"
 
   - name: create main.yml files
-    copy: content="---\n" dest="{{ role_path }}/{{ role_name }}/{{ item }}/main.yml"
+    copy: content="---\n" dest="{{ role_path }}/{{ item }}/main.yml"
     with_items: "{{ role_subdirectories }}"
