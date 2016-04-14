@@ -139,7 +139,7 @@ def generate():
 _generator_options = [
     click.option('--debug', is_flag=True, help="Enable debug mode"),
     click.option('--generator', '-g', default=get_config()['generator'], help='Path to custom generator repo'),
-    click.argument('path', type=click.Path())
+    click.argument('name')
 ]
 def generator_options(fn):
     for option in _generator_options:
@@ -149,51 +149,51 @@ def generator_options(fn):
 #TODO: generate these dynamically
 @generate.command(name='repo')
 @generator_options
-def generate_repo(debug, generator, path):
+def generate_repo(debug, generator, name):
     playbook_path = generator + '/repo.yml'
     if debug:
         click.echo('generating repo using %s' % playbook_path)
-    run_ansible(playbook_path, {'repo_path': path})
+    run_ansible(playbook_path, {'repo_name': name})
 
 @generate.command(name='role')
 @generator_options
-def generate_role(debug, generator, path):
+def generate_role(debug, generator, name):
     playbook_path = generator + '/role.yml'
     if debug:
         click.echo('generating role using %s' % playbook_path)
-    run_ansible(playbook_path, {'role_path': path})
+    run_ansible(playbook_path, {'role_name': name})
 
 @generate.command(name='filter')
 @generator_options
-def generate_filter(debug, generator, path):
+def generate_filter(debug, generator, name):
     playbook_path = generator + '/filter.yml'
     if debug:
         click.echo('generating filter using %s' % playbook_path)
-    run_ansible(playbook_path, {'filter_path': path})
+    run_ansible(playbook_path, {'filter_name': name})
 
 @generate.command(name='inventory')
 @generator_options
-def generate_inventory(debug, generator, path):
+def generate_inventory(debug, generator, name):
     playbook_path = generator + '/inventory.yml'
     if debug:
         click.echo('generating inventory using %s' % playbook_path)
-    run_ansible(playbook_path, {'inventory_path': path})
+    run_ansible(playbook_path, {'inventory_name': name})
 
 @generate.command(name='config')
 @generator_options
-def generate_config(debug, generator, path):
+def generate_config(debug, generator, name):
     playbook_path = generator + '/config.yml'
     if debug:
         click.echo('generating config using %s' % playbook_path)
-    run_ansible(playbook_path, {'config_path': path})
+    run_ansible(playbook_path, {'config_name': name})
 
 @generate.command(name='playbook')
 @generator_options
-def generate_playbook(debug, generator, path):
+def generate_playbook(debug, generator, name):
     playbook_path = generator + '/playbook.yml'
     if debug:
         click.echo('generating playbook using %s' % playbook_path)
-    run_ansible(playbook_path, {'playbook_path': path})
+    run_ansible(playbook_path, {'playbook_name': name})
 
 def run_ansible(playbook, vars=None):
     if not os.path.exists(playbook):
