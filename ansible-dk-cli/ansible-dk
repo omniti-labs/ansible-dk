@@ -111,17 +111,66 @@ def verify():
 def generate():
     pass
 
-@generate.command(name='playbook')
-@click.option('--name', required=True, help='Name of playbook to generate')
-def generate_playbook(name):
-    print("Generating playbook: ", name)
+
+#TODO: absolute path and check a config file for default generator repo path
+_generator_options = [
+    click.option('--debug', is_flag=True, help="Enable debug mode"),
+    click.option('--generator-repo', '-g', default='generators/', help='Path to custom generator repo'),
+    click.argument('path', type=click.Path())
+]
+def generator_options(fn):
+    for option in _generator_options:
+        fn = option(fn)
+    return fn
+
+#TODO: generate these dynamically
+@generate.command(name='repo')
+@generator_options
+def generate_repo(debug, generator_repo, path):
+    playbook_path = generator_repo + '/repo.yml'
+    if debug:
+        click.echo('generating repo using %s' % playbook_path)
+    run_ansible(playbook_path, {'repo_path': path})
 
 @generate.command(name='role')
-@click.option('--name', required=True, help='Name of role to generate')
-@click.option('--playbook', default='generate-role.yml', help='path to custom role generator playbook')
-def generate_role(name, playbook):
-    print "Generating role named %s using playbook %s" % (name, playbook)
-    run_ansible(playbook, {'role_name': name})
+@generator_options
+def generate_role(debug, generator_repo, path):
+    playbook_path = generator_repo + '/role.yml'
+    if debug:
+        click.echo('generating role using %s' % playbook_path)
+    run_ansible(playbook_path, {'role_path': path})
+
+@generate.command(name='filter')
+@generator_options
+def generate_filter(debug, generator_repo, path):
+    playbook_path = generator_repo + '/filter.yml'
+    if debug:
+        click.echo('generating filter using %s' % playbook_path)
+    run_ansible(playbook_path, {'filter_path': path})
+
+@generate.command(name='inventory')
+@generator_options
+def generate_inventory(debug, generator_repo, path):
+    playbook_path = generator_repo + '/inventory.yml'
+    if debug:
+        click.echo('generating inventory using %s' % playbook_path)
+    run_ansible(playbook_path, {'inventory_path': path})
+
+@generate.command(name='config')
+@generator_options
+def generate_config(debug, generator_repo, path):
+    playbook_path = generator_repo + '/config.yml'
+    if debug:
+        click.echo('generating config using %s' % playbook_path)
+    run_ansible(playbook_path, {'config_path': path})
+
+@generate.command(name='playbook')
+@generator_options
+def generate_playbook(debug, generator_repo, path):
+    playbook_path = generator_repo + '/playbook.yml'
+    if debug:
+        click.echo('generating playbook using %s' % playbook_path)
+    run_ansible(playbook_path, {'playbook_path': path})
 
 def run_ansible(playbook, vars=None):
     if not os.path.exists(playbook):
