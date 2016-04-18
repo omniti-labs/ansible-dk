@@ -136,10 +136,20 @@ def verify():
 def generate():
     pass
 
+def parse_extra_vars(context, param, e):
+    extra_vars = {}
+    for var in e:
+        try:
+            key, value = var.split('=')
+        except ValueError:
+            raise click.BadParameter('must be in the format var=value')
+        extra_vars[key] = value
+    return extra_vars
+
 _generator_options = [
     click.option('--debug', is_flag=True, help="Enable debug mode"),
     click.option('--generator', '-g', default=get_config()['generator'], help='Path to custom generator repo'),
-    click.option('-e', multiple=True, help='extra vars to pass to ansible, var=value'),
+    click.option('-e', 'extra_vars', multiple=True, callback=parse_extra_vars, help='extra vars to pass to ansible, var=value'),
     click.argument('name')
 ]
 def generator_options(fn):
@@ -147,21 +157,10 @@ def generator_options(fn):
         fn = option(fn)
     return fn
 
-def parse_extra_vars(e):
-    extra_vars = {}
-    for var in e:
-        try:
-            key, value = var.split('=')
-        except ValueError:
-            click.echo('extra args must be in the format var=value')
-            sys.exit()
-        extra_vars[key] = value
-    return extra_vars
 #TODO: generate these dynamically
 @generate.command(name='repo')
 @generator_options
-def generate_repo(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_repo(debug, generator, name, extra_vars):
     extra_vars['repo_name'] = name
     playbook_path = generator + '/repo.yml'
     if debug:
@@ -170,8 +169,7 @@ def generate_repo(debug, generator, name, e):
 
 @generate.command(name='role')
 @generator_options
-def generate_role(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_role(debug, generator, name, extra_vars):
     extra_vars['role_name'] = name
     playbook_path = generator + '/role.yml'
     if debug:
@@ -180,8 +178,7 @@ def generate_role(debug, generator, name, e):
 
 @generate.command(name='filter')
 @generator_options
-def generate_filter(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_filter(debug, generator, name, extra_vars):
     extra_vars['filter_name'] = name
     playbook_path = generator + '/filter.yml'
     if debug:
@@ -190,8 +187,7 @@ def generate_filter(debug, generator, name, e):
 
 @generate.command(name='inventory')
 @generator_options
-def generate_inventory(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_inventory(debug, generator, name, extra_vars):
     extra_vars['inventory_name'] = name
     playbook_path = generator + '/inventory.yml'
     if debug:
@@ -200,8 +196,7 @@ def generate_inventory(debug, generator, name, e):
 
 @generate.command(name='config')
 @generator_options
-def generate_config(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_config(debug, generator, name, extra_vars):
     extra_vars['config_name'] = name
     playbook_path = generator + '/config.yml'
     if debug:
@@ -210,8 +205,7 @@ def generate_config(debug, generator, name, e):
 
 @generate.command(name='playbook')
 @generator_options
-def generate_playbook(debug, generator, name, e):
-    extra_vars = parse_extra_vars(e)
+def generate_playbook(debug, generator, name, extra_vars):
     extra_vars['playbook_name'] = name
     playbook_path = generator + '/playbook.yml'
     if debug:
