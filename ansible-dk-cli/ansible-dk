@@ -158,7 +158,7 @@ def generate_method(thing):
         if debug:
             click.echo('generating %s named %s using %s' % (thing, name, playbook_path))
         run_ansible(playbook_path, extra_vars)
-    return generated_method
+    generated_method.__name__ = 'generate_%s' % thing
 
 generate_things = ['repo', 'role', 'filter', 'inventory', 'config', 'playbook']
 for thing in generate_things:
