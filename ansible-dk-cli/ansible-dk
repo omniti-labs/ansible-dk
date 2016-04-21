@@ -128,7 +128,7 @@ def verify():
 
 ###################################################
 # generate command
-@cli.group()
+@cli.group(help='A tool for generating skeleton Ansible code layouts.  More info: https://github.com/omniti-labs/ansible-dk/blob/master/GENERATE.md')
 def generate():
     pass
 
@@ -144,10 +144,10 @@ def parse_extra_vars(context, param, e):
 
 # dynamically create generate subcommands
 def generate_method(thing):
-    @generate.command(name=thing)
+    @generate.command(name=thing, help='Generate ansible %s' % thing)
     @click.option('--debug', is_flag=True, help="Enable debug mode")
-    @click.option('--generator', '-g', default=False, help='Path to custom generator repo')
-    @click.option('-e', 'extra_vars', multiple=True, callback=parse_extra_vars, help='extra vars to pass to ansible, var=value')
+    @click.option('--generator', '-g', default=False, metavar='/opt/ansible-dk/generators/default', help='Path to custom generator repo')
+    @click.option('-e', 'extra_vars', multiple=True, callback=parse_extra_vars, metavar='var=value', help='extra vars to pass to ansible, multiple ok')
     @click.argument('name')
     def generated_method(debug, generator, name, extra_vars):
         if not generator:
