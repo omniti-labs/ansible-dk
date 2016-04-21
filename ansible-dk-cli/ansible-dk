@@ -22,7 +22,7 @@ HOME = os.getenv("HOME")
 
 def get_config(debug=False):
     #TODO: pass debug properly
-    config_path=os.path.expanduser('~/.ansible-dk/config')
+    config_path=os.path.expanduser('~/.ansible-dk/config.yml')
     config = {
         'generator': '/opt/ansible-dk/generators/'
     }
