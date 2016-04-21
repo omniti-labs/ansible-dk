@@ -24,7 +24,7 @@ def get_config(debug=False):
     #TODO: pass debug properly
     config_path=os.path.expanduser('~/.ansible-dk/config.yml')
     config = {
-        'generator': '/opt/ansible-dk/generators/'
+        'generator': '/opt/ansible-dk/generators/default/'
     }
     if os.path.isfile(config_path):
         try:
