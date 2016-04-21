@@ -21,10 +21,9 @@ PYTHON_ABI = "2.7"
 HOME = os.getenv("HOME")
 
 def get_config(debug=False):
-    #TODO: pass debug properly
     config_path=os.path.expanduser('~/.ansible-dk/config.yml')
     config = {
-        'generator': '/opt/ansible-dk/generators/default/'
+        'generator': '/opt/ansible-dk/generators/default'
     }
     if os.path.isfile(config_path):
         try:
@@ -143,13 +142,16 @@ def parse_extra_vars(context, param, e):
         extra_vars[key] = value
     return extra_vars
 
+# dynamically create generate subcommands
 def generate_method(thing):
     @generate.command(name=thing)
     @click.option('--debug', is_flag=True, help="Enable debug mode")
-    @click.option('--generator', '-g', default=get_config()['generator'], help='Path to custom generator repo')
+    @click.option('--generator', '-g', default=False, help='Path to custom generator repo')
     @click.option('-e', 'extra_vars', multiple=True, callback=parse_extra_vars, help='extra vars to pass to ansible, var=value')
     @click.argument('name')
     def generated_method(debug, generator, name, extra_vars):
+        if not generator:
+            generator = get_config(debug)['generator']
         extra_vars[thing+'_name'] = name
         playbook_path = "%s/%s.yml" % (generator, thing)
         if debug:
