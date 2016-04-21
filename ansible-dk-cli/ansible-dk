@@ -23,11 +23,8 @@ HOME = os.getenv("HOME")
 def get_config(debug=False):
     #TODO: pass debug properly
     config_path=os.path.expanduser('~/.ansible-dk/config')
-    #TODO: absolute path for default generator repo
     config = {
-        'generator': {
-            'repo': '/opt/ansible-dk/generators/'
-        }
+        'generator': '/opt/ansible-dk/generators/'
     }
     if os.path.isfile(config_path):
         try:
