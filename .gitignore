@@ -10,4 +10,5 @@ bin/*
 files/**/cache/
 vendor/cookbooks
 local/
+local_*/
 Gemfile.lock

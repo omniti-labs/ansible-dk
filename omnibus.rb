@@ -13,7 +13,7 @@
 #
 # Uncomment this line to change the default base directory to "local"
 # -------------------------------------------------------------------
-base_dir './local'
+base_dir "./local_#{RUBY_PLATFORM}"
 #
 # Alternatively you can tune the individual values
 # ------------------------------------------------
@@ -53,4 +53,3 @@ windows_arch   %w{x86 x64}.include?((ENV['OMNIBUS_WINDOWS_ARCH'] || '').downcase
                  ENV['OMNIBUS_WINDOWS_ARCH'].downcase.to_sym : :x86
 
 append_timestamp false
-
