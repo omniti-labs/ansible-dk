@@ -207,6 +207,11 @@ omnibus manifest PROJECT -l warn
 This will output a JSON-formatted manifest containing the resolved
 version of every software definition.
 
+## Note
+When building new versions, clear local build cache.  Stale or broken builds could get built in.
+```shell
+$ rm -rf local/build local/cache /opt/ansible-dk/*
+```
 
 Kitchen-based Build Environment
 -------------------------------
