@@ -101,6 +101,7 @@ This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI COmput
  * Clinton Wolfe, DevOps Practice Lead at OmniTI
  * Rick Pufky, DevOps Generalist at OmniTI
  * Lyn Muldrow, Frontend Developer at OmniTI - Logo design
+ * Josh Blancett, Automation Engineer at OmniTI
  * Your Name Could Be Here
 
 ### Special Thanks
