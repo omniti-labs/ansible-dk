@@ -101,6 +101,7 @@ This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI COmput
  * Clinton Wolfe, DevOps Practice Lead at OmniTI
  * Rick Pufky, DevOps Generalist at OmniTI
  * Lyn Muldrow, Frontend Developer at OmniTI - Logo design
+ * Josh Blancett, Automation Engineer at OmniTI
  * Your Name Could Be Here
 
 ### Special Thanks
@@ -207,6 +208,11 @@ omnibus manifest PROJECT -l warn
 This will output a JSON-formatted manifest containing the resolved
 version of every software definition.
 
+## Note
+When building new versions, clear local build cache.  Stale or broken builds could get built in.
+```shell
+$ rm -rf local/build local/cache /opt/ansible-dk/*
+```
 
 Kitchen-based Build Environment
 -------------------------------

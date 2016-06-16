@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2016-06-13
+
+- upgraded ansible to 2.1.0.0
+
 ## [1.1.2] - 2016-04-20
 
 - fixed pythonpath issue - https://github.com/omniti-labs/ansible-dk/issues/63
