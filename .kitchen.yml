@@ -12,7 +12,7 @@ driver:
     project: labs-ansible-dk
     type: build-slave
     creator: <%= ENV['USER'] %>
-  
+
 provisioner:
   name: chef_zero
   require_chef_omnibus: 12.4.1
@@ -24,11 +24,15 @@ platforms:
       image_id: ami-bb156ad1 # 14.04.4 https://cloud-images.ubuntu.com/locator/ec2/
       tags:
         Name: ansible-dk-build-ubuntu-14.04-<%= ENV['USER'] %>
+  - name: centos-72
+    run_list: yum-epel::default
+    driver:
+      box: bento/centos-7.2
 
 transport:
   # ssh_key: ADD THIS IN .kitchen.local.yml
   connection_timeout: 30
-        
+
 suites:
   - name: default
     run_list:
