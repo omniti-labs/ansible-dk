@@ -31,6 +31,8 @@ source url: "http://python.org/ftp/python/#{version}/Python-#{version}.tgz"
 
 relative_path "Python-#{version}"
 
+whitelist_file /dbm\.so/
+
 build do
   env = {
     "CFLAGS" => "-I#{install_dir}/embedded/include -O3 -g -pipe",
