@@ -6,6 +6,7 @@ end
 
 git node[:omnibus][:project_repo] do
   repository 'https://github.com/omniti-labs/ansible-dk.git'
+  branch 'centos'
   action :sync
   user node[:omnibus][:build_user]
 end
