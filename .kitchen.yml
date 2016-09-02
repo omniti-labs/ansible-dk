@@ -1,11 +1,11 @@
 driver:
   name: ec2
-  associate_public_ip: true
+  associate_public_ip: false
   availability_zone: us-east-1a
   # aws_ssh_key_id: ADD THIS IN .kitchen.local.yml
   instance_type: m3.large
   # security_group_ids: ADD THIS IN .kitchen.local.yml
-  interface: public
+  interface: private
   # shared_credentials_profile: ADD THIS IN .kitchen.local.yml
   # subnet_id: ADD THIS IN .kitchen.local.yml
   tags:
@@ -27,7 +27,10 @@ platforms:
   - name: centos-72
     run_list: yum-epel::default
     driver:
-      box: bento/centos-7.2
+      box: bento/centos-7.2  # Used with Vagrant driver
+      image_id: ami-6d1c2007 # Official CentOS 7.2 with updates - from AWS Marketplace.
+      tags:
+        Name: ansible-dk-build-centos-7.2-<%= ENV['USER'] %>
 
 transport:
   # ssh_key: ADD THIS IN .kitchen.local.yml
