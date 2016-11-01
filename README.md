@@ -96,7 +96,7 @@ If you have some experience doing Omnibus packaging, which is perhaps not for th
 
 ### Contributors
 
-This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI COmputer Consulting (www.omniti.com).  Community contributors are welcome, and maintainers may join after a vetting period.
+This is a project sponsored by OmniTI Labs, the FOSS initiative of OmniTI (omniti.com).  Community contributors are welcome, and maintainers may join after a vetting period.
 
  * Clinton Wolfe, DevOps Practice Lead at OmniTI
  * Rick Pufky, DevOps Generalist at OmniTI
