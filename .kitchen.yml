@@ -1,39 +1,35 @@
 driver:
-  name: ec2
-  associate_public_ip: false
-  availability_zone: us-east-1a
-  # aws_ssh_key_id: ADD THIS IN .kitchen.local.yml
-  instance_type: m3.large
-  # security_group_ids: ADD THIS IN .kitchen.local.yml
-  interface: private
-  # shared_credentials_profile: ADD THIS IN .kitchen.local.yml
-  # subnet_id: ADD THIS IN .kitchen.local.yml
-  tags:
-    project: labs-ansible-dk
-    type: build-slave
-    creator: <%= ENV['USER'] %>
-
+  # Driver info defined in .kitchen.local.yml.*
+  
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 12.4.1
+  require_chef_omnibus: 12.17.44
 
 platforms:
   - name: ubuntu-14.04
     run_list: apt::default
-    driver:
+    driver_config:
+      # For AWS driver
       image_id: ami-bb156ad1 # 14.04.4 https://cloud-images.ubuntu.com/locator/ec2/
       tags:
         Name: ansible-dk-build-ubuntu-14.04-<%= ENV['USER'] %>
+      # For Docker
+      image: ubuntu-chef-12.16
+      platform: ubuntu
+      
   - name: centos-72
     run_list: yum-epel::default
-    driver:
-      box: bento/centos-7.2  # Used with Vagrant driver
+    driver_config:
+      # For AWS driver
       image_id: ami-6d1c2007 # Official CentOS 7.2 with updates - from AWS Marketplace.
       tags:
         Name: ansible-dk-build-centos-7.2-<%= ENV['USER'] %>
+      # For Docker driver
+      image: centos-chef-12.17:7
+      # For Vagrant driver 
+      box: bento/centos-7.2
 
 transport:
-  # ssh_key: ADD THIS IN .kitchen.local.yml
   connection_timeout: 30
 
 suites:

@@ -1,0 +1,5 @@
+---
+driver:
+  name: docker
+  binary: /usr/local/bin/docker
+  use_sudo: false
