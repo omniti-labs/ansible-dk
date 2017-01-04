@@ -43,5 +43,5 @@ RUN yum clean all && \
 # We do this in a separate RUN command since these packages are more 
 # likely to change over time, and we want to reuse previous layers as 
 # much as possible.
-RUN yum -y install crontabs curl initscripts net-tools passwd sudo tar which && \ 
+RUN yum -y install git crontabs curl initscripts net-tools passwd sudo tar which && \ 
   (curl -L https://www.opscode.com/chef/install.sh | bash -s — -v 12.0.3)
