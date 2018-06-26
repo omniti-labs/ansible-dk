@@ -1,3 +1,5 @@
+![Maintainer Needed](https://img.shields.io/badge/Maintainer-Needed-red.svg)
+
 # ansible-dk
 
 An omnibus-based toolkit for working on Ansible-based infrastructure code.
